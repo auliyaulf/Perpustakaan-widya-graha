@@ -1,0 +1,47 @@
+/* --- KHUSUS TAMPILAN LOGIN --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body, html { width: 100%; height: 100%; font-family: 'Segoe UI', sans-serif; background: #f4f7fa; }
+
+.login-container { display: flex; width: 100%; height: 100vh; }
+
+.login-image { 
+    flex: 3; position: relative; 
+    background: url('background_1.jpeg') center center / cover no-repeat; 
+    display: flex; align-items: center; justify-content: center;
+}
+.login-image::before { 
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+    background: linear-gradient(45deg, rgba(26, 58, 95, 0.9), rgba(0, 0, 0, 0.4)); 
+}
+
+.bg-text-login { position: relative; text-align: center; color: white; z-index: 3; padding: 40px; }
+.bg-text-login h1 { font-size: 54px; font-weight: 800; margin-bottom: 10px; }
+.bg-text-login p { font-size: 22px; color: #ffc107; font-weight: 600; }
+
+.login-form-section { flex: 2; display: flex; justify-content: center; align-items: center; background: white; }
+.login-form-section form { width: 100%; max-width: 400px; padding: 30px; }
+
+.form-header-login { text-align: center; margin-bottom: 35px; }
+.form-logo-login { width: 80px; margin-bottom: 15px; }
+.form-header-login h2 { color: #1a3a5f; font-size: 28px; font-weight: 700; }
+
+.input-group { position: relative; margin-bottom: 20px; }
+.input-group i { position: absolute; top: 50%; left: 15px; transform: translateY(-50%); color: #1a3a5f; font-size: 18px; }
+
+input, select { 
+    width: 100%; padding: 14px 15px 14px 45px; border-radius: 12px; 
+    border: 2px solid #eee; font-size: 15px; background: #f9f9f9; transition: 0.3s;
+}
+input:focus, select:focus { border-color: #1a3a5f; background: white; outline: none; }
+
+.btn-login-custom { 
+    width: 100%; padding: 16px; background: #1a3a5f; color: white; 
+    border: none; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 16px; transition: 0.3s;
+}
+.btn-login-custom:hover { background: #ffc107; color: #1a3a5f; transform: translateY(-2px); }
+
+@media (max-width: 992px) {
+    .login-image { display: none; }
+    .login-form-section { background: #f4f7fa; }
+    .login-form-section form { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+}

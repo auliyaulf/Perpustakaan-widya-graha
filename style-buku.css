@@ -1,0 +1,49 @@
+ :root { --navy: #1a3a5f; --shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        /* Layout Reset */
+        body { display: flex; min-height: 100vh; background-color: #f4f7fa; }
+
+        /* Sidebar Flexbox Fix */
+        .sidebar { 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; 
+            position: fixed; 
+            z-index: 1000;
+        }
+        .sidebar-nav { flex: 1; display: flex; flex-direction: column; }
+        .sidebar-menu { display: flex; flex-direction: column; height: 100%; list-style: none; padding: 0; margin: 0; }
+        .menu-item.logout { margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; margin-bottom: 20px; }
+
+        /* Full Width Content */
+        .main-content { 
+            margin-left: 260px; 
+            width: calc(100% - 260px); 
+            padding: 0; 
+            flex: 1;
+        }
+
+        .content-body { padding: 25px; }
+        
+        /* Card & Table Styling */
+        .card-custom { 
+            border: none; 
+            border-radius: 15px; 
+            box-shadow: var(--shadow); 
+            background: white; 
+            padding: 25px; 
+            width: 100%; 
+        }
+        
+        .img-table { width: 45px; height: 60px; object-fit: cover; border-radius: 4px; }
+        .badge-kategori { background: #e3f2fd; color: #1976d2; padding: 5px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; }
+
+        /* Modal Custom */
+        .modal-content { border-radius: 20px; border: none; }
+        .modal-header { border: none; padding: 25px 30px 5px 30px; }
+        .modal-body { padding: 10px 30px 30px 30px; }
+        .form-control { border-radius: 10px; background: #f8f9fa; border: 1px solid #eee; }
+
+        @media (max-width: 992px) {
+            .main-content { margin-left: 80px; width: calc(100% - 80px); }
+        }

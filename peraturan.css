@@ -1,0 +1,99 @@
+ 
+        :root { --navy: #1a3a5f; --shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        body { 
+            display: flex; 
+            min-height: 100vh; 
+            background-color: #f4f7fa; 
+            margin: 0; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        
+        /* SIDEBAR FIXED DENGAN LOGOUT DI BAWAH */
+        .sidebar { 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; 
+            position: fixed; 
+            width: 260px; 
+            z-index: 1000; 
+            background: var(--navy);
+        }
+        
+        .sidebar-nav { 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .sidebar-menu { 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+
+        /* INI KUNCINYA: margin-top: auto mendorong logout ke bawah */
+        .menu-item.logout { 
+            margin-top: auto !important; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            padding-top: 10px; 
+            margin-bottom: 20px; 
+        }
+
+        /* AREA KONTEN UTAMA */
+        .main-content { 
+            margin-left: 260px; 
+            width: calc(100% - 260px); 
+            padding: 0; 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .card-header-admin { 
+            border: none; 
+            background: white; 
+            padding: 18px 25px; 
+            border-bottom: 1px solid #eee; 
+            box-shadow: var(--shadow);
+        }
+
+        .content-body { padding: 25px; flex: 1; }
+
+        .card-custom { 
+            border: none; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow); 
+            background: white; 
+            margin-bottom: 25px; 
+            overflow: hidden; 
+        }
+        
+        .card-title-box { 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #eee; 
+            background: #fff;
+        }
+
+        .btn-navy { background: var(--navy); color: white; border-radius: 8px; font-weight: 600; }
+        .btn-navy:hover { background: #122944; color: white; }
+        
+        .table thead th { 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            color: #999; 
+            border: none; 
+            letter-spacing: 1px; 
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 20px 0; 
+            font-size: 12px; 
+            color: #888; 
+            background: #fff; 
+            border-top: 1px solid #eee; 
+        }

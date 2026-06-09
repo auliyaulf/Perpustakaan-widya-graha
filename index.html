@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat AI</title>
+</head>
+<body>
+
+<h2>Chat AI</h2>
+
+<input type="text" id="pesan" placeholder="Ketik pesan...">
+<button onclick="kirim()">Kirim</button>
+
+<br><br>
+
+<div id="chat"></div>
+
+<script>
+function kirim() {
+  let pesan = document.getElementById("pesan").value;
+
+  fetch("chat_ai.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "pesan=" + pesan
+  })
+  .then(res => res.json())
+  .then(data => {
+    let jawaban = data.choices[0].message.content;
+
+    document.getElementById("chat").innerHTML +=
+      "<p><b>Kamu:</b> " + pesan + "</p>" +
+      "<p><b>AI:</b> " + jawaban + "</p>";
+
+    document.getElementById("pesan").value = "";
+  });
+}
+</script>
+
+</body>
+</html>

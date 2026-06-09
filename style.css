@@ -1,0 +1,219 @@
+/* --- DASHBOARD WIDYA GRAHA (FULL RESPONSIVE & FIXED SIDEBAR) --- */
+:root {
+    --navy: #1a3a5f;
+    --navy-dark: #142d4a;
+    --gold: #ffc107;
+    --light-bg: #f4f7fa;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body, html { 
+    width: 100%; 
+    height: 100%; 
+    font-family: 'Segoe UI', Roboto, sans-serif; 
+    background: var(--light-bg); 
+    color: #333; 
+    overflow-x: hidden;
+}
+
+/* --- SIDEBAR --- */
+.sidebar { 
+    width: 260px; 
+    background: var(--navy); 
+    color: white; 
+    height: 100vh; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    z-index: 1000; 
+    display: flex; 
+    flex-direction: column; /* Mengatur susunan header dan menu secara vertikal */
+    transition: 0.3s;
+}
+
+.sidebar-header { 
+    padding: 25px 15px; 
+    text-align: center; 
+    background: var(--navy-dark); 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+}
+
+.logo-custom { width: 50px; margin-bottom: 8px; }
+.sidebar-header h2 { font-size: 14px; letter-spacing: 1px; font-weight: 800; color: white; }
+.sidebar-header span { font-size: 9px; color: var(--gold); text-transform: uppercase; }
+
+/* --- MENU AREA --- */
+.sidebar-menu { 
+    list-style: none; 
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Menarik area menu agar tombol logout terdorong ke paling bawah */
+}
+
+.menu-label {
+    padding: 15px 20px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-item { margin-bottom: 4px; border-radius: 8px; }
+.menu-item a { 
+    display: flex; 
+    align-items: center; 
+    padding: 12px 15px; 
+    color: rgba(255,255,255,0.7); 
+    text-decoration: none; 
+    font-size: 14px;
+}
+.menu-item i { margin-right: 12px; width: 18px; text-align: center; font-size: 16px; }
+
+.menu-item:hover, .menu-item.active { background: rgba(255, 255, 255, 0.1); }
+.menu-item.active a { color: var(--gold); font-weight: 600; border-left: 3px solid var(--gold); }
+
+/* --- TOMBOL KELUAR (LOGOUT) - POSISI PALING BAWAH --- */
+.menu-item.logout { 
+    margin-top: auto; /* Memaksa tombol ke dasar sidebar */
+    margin-bottom: 20px; 
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 10px;
+}
+.menu-item.logout a { color: #ff6b6b; font-weight: bold; }
+.menu-item.logout:hover { background: rgba(255, 107, 107, 0.1); }
+
+/* --- MAIN CONTENT --- */
+.main-content { 
+    margin-left: 260px; 
+    min-height: 100vh; 
+    transition: 0.3s; 
+}
+
+/* Top Bar */
+.top-bar { 
+    background: white; 
+    padding: 15px 25px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky; 
+    top: 0; 
+    z-index: 99;
+}
+
+/* Breadcrumb / Judul Halaman */
+.breadcrumb { font-size: 14px; color: #555; }
+.breadcrumb b { color: var(--navy); }
+
+/* Tanggal */
+.date-now {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.container { padding: 25px; max-width: 1200px; margin: 0 auto; }
+
+/* Welcome Card (Halo Admin) */
+.welcome-card { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    box-shadow: var(--shadow); 
+    border-left: 6px solid var(--navy); 
+    margin-bottom: 25px;
+}
+.welcome-card h2 { color: var(--navy); font-size: 24px; margin-bottom: 5px; }
+.welcome-card p { color: #666; font-size: 14px; }
+
+/* --- GRID STATISTIK --- */
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px; 
+}
+
+.stat-card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    color: inherit; 
+    box-shadow: var(--shadow); 
+    transition: 0.3s;
+}
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-icon { 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 18px; 
+    margin-right: 15px;
+}
+
+.blue .stat-icon { background: #e3f2fd; color: #2196f3; }
+.green .stat-icon { background: #e8f5e9; color: #4caf50; }
+.orange .stat-icon { background: #fff3e0; color: #ff9800; }
+.purple .stat-icon { background: #f3e5f5; color: #9c27b0; }
+
+.stat-info h3 { font-size: 20px; color: #333; }
+.stat-info p { font-size: 10px; color: #888; font-weight: bold; text-transform: uppercase; }
+
+/* --- RESPONSIVE MODE (KHUSUS TAMPILAN HP) --- */
+/* --- RESPONSIVE MODE: TETAP LEBAR SEPERTI ADMIN --- */
+
+/* Untuk Tablet dan HP */
+
+    /* Paksa Sidebar tetap lebar (tidak boleh menyempit) */
+    .sidebar { 
+        width: 240px !important; 
+        position: fixed;
+    }
+
+    /* Pastikan Main Content memberi ruang yang pas untuk sidebar */
+    .main-content { 
+        margin-left: 240px !important; 
+        width: calc(100% - 240px);
+    }
+
+    /* Kecilkan sedikit elemen header agar tidak bertumpuk */
+    .sidebar-header h2 { font-size: 12px; }
+    .logo-custom { width: 40px; }
+    
+    /* Buat statistik jadi satu kolom agar rapi ke bawah */
+    .stats-grid { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+
+
+/* Khusus untuk HP sangat kecil */
+@media (max-width: 480px) {
+    /* Tetap pertahankan lebar sidebar agar teks Dashboard tidak hilang */
+    .sidebar { 
+        width: 200px !important; 
+    }
+    .main-content { 
+        margin-left: 200px !important; 
+    }
+    
+    .container { 
+        padding: 15px; 
+    }
+}

@@ -1,0 +1,35 @@
+
+        :root { --navy: #1a3a5f; --shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        body { display: flex; min-height: 100vh; background-color: #f4f7fa; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        
+        .sidebar { display: flex; flex-direction: column; height: 100vh; position: fixed; width: 260px; z-index: 1000; background: var(--navy); }
+        .sidebar-nav { flex: 1; display: flex; flex-direction: column; }
+        .sidebar-menu { list-style: none; padding: 0; margin: 0; }
+        .menu-item.logout { margin-top: auto !important; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; margin-bottom: 20px; }
+
+        .main-content { margin-left: 260px; width: calc(100% - 260px); padding: 0; flex: 1; display: flex; flex-direction: column; }
+        .card-header-admin { border: none; background: white; margin-bottom: 20px; padding: 15px 25px; border-bottom: 1px solid #eee; box-shadow: var(--shadow); }
+        
+        .img-cover-table { width: 50px; height: 70px; object-fit: cover; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .badge-kategori { background: #fff5f5; color: #fa5252; padding: 5px 12px; border-radius: 50px; font-size: 11px; font-weight: 600; }
+        
+        /* Modal Fix agar tidak kepotong */
+        .modal-content { border-radius: 15px; overflow: hidden; border: none; }
+        .form-control-custom { 
+            border-radius: 10px; 
+            background-color: #f8f9fa; 
+            border: 1px solid #eee; 
+            padding: 10px 15px; 
+            font-size: 14px; 
+            height: 45px !important; /* Tinggi dipaksa agar teks di tengah */
+            line-height: 1.5;
+        }
+        .form-control-custom:focus { background-color: #fff; border-color: var(--navy); box-shadow: none; }
+        
+        /* Memperbaiki Select Box */
+        select.form-control-custom {
+            height: 45px !important;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    

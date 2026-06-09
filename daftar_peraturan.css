@@ -1,0 +1,105 @@
+ body, .main-content {
+            background-color: #f4f7f6 !important;
+        }
+
+        /* Top Bar Modern */
+        .top-bar {
+            background: #ffffff !important;
+            border-bottom: 1px solid #eee;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container-fluid-custom {
+            padding: 30px 40px;
+        }
+
+        /* Card Utama */
+        .card-main {
+            background: white !important;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            padding: 40px;
+            border: 1px solid #eee !important;
+        }
+
+        /* Desain Item Peraturan */
+        .rule-card {
+            border: 1px solid #f0f0f0;
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            position: relative;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .rule-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #ffc107; /* Warna aksen kuning perpus */
+        }
+
+        .rule-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: #e0e0e0;
+        }
+
+        .rule-title {
+            color: #1a3a5f;
+            font-weight: 700;
+            font-size: 17px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rule-title i {
+            font-size: 14px;
+            margin-right: 10px;
+            color: #ffc107;
+        }
+
+        .rule-text {
+            color: #666;
+            line-height: 1.8;
+            font-size: 14.5px;
+            margin-bottom: 0;
+            white-space: pre-line;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .header-icon {
+            width: 50px;
+            height: 50px;
+            background: #1a3a5f;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        /* WIGA CHAT STYLE */
+        #wiga-container { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+        #wiga-chatbox { 
+            display: none; width: 330px; height: 450px; background: #1a1a1a; 
+            border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            flex-direction: column; overflow: hidden; margin-bottom: 15px; border: 1px solid #333;
+        }
